@@ -53,8 +53,9 @@ button:hover {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin-top: 20px;
   padding: 0;
@@ -62,6 +63,8 @@ button:hover {
 }
 
 .gallery-item {
+  width: 360px;
+  height: 200px;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
