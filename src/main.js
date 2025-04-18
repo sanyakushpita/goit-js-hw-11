@@ -19,7 +19,7 @@ form.addEventListener('submit', async event => {
   if (query === '') {
     iziToast.error({
       message: 'Please enter a search query.',
-      position: 'top-right',
+      position: 'topRight',
     });
     return;
   }
@@ -29,11 +29,12 @@ form.addEventListener('submit', async event => {
 
   try {
     const data = await getImagesByQuery(query);
+    console.log(data);
 
     if (data.hits.length === 0) {
       iziToast.error({
         message: 'Sorry, no images found. Please try again!',
-        position: 'top-right',
+        position: 'topRight',
       });
     } else {
       createGallery(data.hits);
@@ -41,7 +42,7 @@ form.addEventListener('submit', async event => {
   } catch (error) {
     iziToast.error({
       message: 'Error fetching images. Please try again!',
-      position: 'top-right',
+      position: 'topRight',
     });
   } finally {
     hideLoader();
